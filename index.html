@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <audio hidden id='W' controls="controls">
+        <source src="win.wav">
+    </audio>
+    <audio hidden id='L' controls="controls">
+        <source src="lose.wav">
+    </audio>
+    
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>卡牌遊戲</title>
+    <script language="javascript">
+        alert('滑鼠點擊網頁，任何處即可進行遊戲\n規則：\n綠色CPU、紅色玩家，若點數大於CPU則獲勝且增加一張卡數，反之，則失去一張，直到卡數為0方遊戲結束，此外Ace為最大，不論花色。');
+        </script>
+    <!--module先渲染完再執行module部分-->
+    <script src="js/scirpt.js" type="module"></script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="computer-deck deck"></div>
+    <div class="computer-card-slot card-slot">
+    </div>
+    <div class="text"></div>
+    <div class="player-deck deck"></div>
+    <div class="player-card-slot card-slot">
+    </div>
+</body>
+
+</html>
