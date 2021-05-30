@@ -1,0 +1,85 @@
+/*::after、::before是偽元素，繼承原本的屬性*/
+*,*::after,*::before{
+    box-sizing: border-box;
+}
+/*軌道格線 repeat重複4rem軌道兩次，rem為每個元素透過「倍數」乘以根元素的 px 值
+gap網格間隙
+pointer 鼠標移過去顯示可點擊link鼠標
+*/
+body{
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2 , 4rem);
+    grid-template-rows: 7rem 2rem 7rem;
+    gap: .5rem;
+    cursor: pointer;
+    justify-content: center;
+    padding-top: 1rem;
+
+}
+.deck{
+    height: 100%;
+    width: 100%;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem; 
+    border-radius: .5rem;  
+    border-color: blue;
+    border-width: 3px; 
+    color: white;
+    user-select: none;
+}
+.computer-deck{
+    background-color: green;
+}
+.player-deck{
+    background-color: red;
+}
+/*因為字的關係需要sapn佔兩列*/
+.text{
+    grid-column: span 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*relative不影響其他元素所在位置*/
+.card{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+    border-radius:  .5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+
+}
+.card.red{
+    color: red;
+}
+.card.black{
+    color: black;
+}
+/*取得data-value特定值
+absolute根據父元素定位*/
+.card::before,
+.card::after{
+    position: absolute;
+    content: attr(data-value);
+    font-size: 1rem;
+}
+.card::before{
+    top: .5rem;
+    left: .5rem;
+}
+.card::after{
+    bottom: .5rem;
+    right: .5rem;
+    transform: rotate(180deg);
+}
+
+
+
